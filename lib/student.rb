@@ -60,7 +60,9 @@ class Student
       WHERE name = ?
     SQL
 
-    Student.new_from_db(DB[:conn].execute(sql, name))
+    row = DB[:conn].execute(sql, name)
+    binding.pry
+    Student.new_from_db(row)
   end
 
   def update
