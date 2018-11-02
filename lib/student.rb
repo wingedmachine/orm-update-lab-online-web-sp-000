@@ -61,9 +61,7 @@ class Student
     SQL
 
     row = DB[:conn].execute(sql, name)
-    ret = Student.new_from_db(row.first)
-    binding.pry
-    ret
+    Student.new_from_db(row.first)
   end
 
   def update
