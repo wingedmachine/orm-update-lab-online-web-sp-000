@@ -15,7 +15,7 @@ class Student
       CREATE TABLE students(
         id INTEGER PRIMARY KEY,
         name TEXT,
-        grade INTEGER
+        grade TEXT
       )
     SQL
 
@@ -41,6 +41,11 @@ class Student
       DB[:conn].execute(sql, name, grade)
       @id = DB[:conn].execute("SELECT last_insert_rowid() FROM students")[0][0]
     end
+  end
+
+  def self.create(name, grade)
+    
+    
   end
 
   def update
